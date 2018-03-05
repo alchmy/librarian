@@ -5,8 +5,6 @@ user_name="user$(date +%s)"
 yum update -y
 yum install git -y
 
-repos=( "PINE_fogcdn.io" )
-github_url=( "https://github.com/musicsmithnz" )
 
 adduser ${user_name}
 cd /home/${user_name}
@@ -32,6 +30,13 @@ cd ..
 su ${user_name}
 ipfs init
 ipfs daemon &
+
+repos=( "PINE_fogcdn.io" )
+github_url=( "https://github.com/musicsmithnz" )
+pkg_name="go-ipfs"
+pkg_v_no="v0.4.13"
+pkg_arch="linux-amd64"
+pkg_ext="tar.gz"
 
 for repo in ${repos[@]}; do
     git clone "${github_url}/${repo}.git"
