@@ -40,18 +40,10 @@ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials '["true"]'
 
 cd /home/${user_name}
 
-repos=( "PINE_fogcdn.io" )
-github_url=( "https://github.com/musicsmithnz" )
 pkg_name="go-ipfs"
 pkg_v_no="v0.4.13"
 pkg_arch="linux-amd64"
 pkg_ext="tar.gz"
-
-for repo in ${repos[@]}; do
-    git clone "${github_url}/${repo}.git"
-    ipfs add -rw ${repo}
-done
-ipfs add ${pkg_full_name}
 
 echo '[Unit]
 Description=ipfs Service
