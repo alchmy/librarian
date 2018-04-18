@@ -52,3 +52,20 @@ for repo in ${repos[@]}; do
     ipfs add -rw ${repo}
 done
 ipfs add ${pkg_full_name}
+
+echo '[Unit]
+Description=ipfs Service
+After=network.target
+
+[Service]
+Type=simple
+User=ipfs
+ExecStart=/usr/local/bin/ipfs daemon
+Restart=on-abort
+
+
+[Install]
+WantedBy=multi-user.target' > /etc/systemd/system/ipfs.service
+sudo systemctl daemon-reload
+sudo systemctl start ipfs.service
+sudo systemctl enable ipfs.service
