@@ -7,7 +7,7 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
-User=raymond
+User=<user-name>
 ExecStart=/usr/local/bin/ipfs daemon
 
 [Install]

@@ -26,6 +26,7 @@ cd ..
 
 ipfs init
 
+sed "s|<user-name>|$USER|"
 sudo cp `dirname $0`/ipfs.service /lib/systemd/system/ipfs.service
 #ipfs config Addresses.API /ip4/0.0.0.0/tcp/5002
 #ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]'
