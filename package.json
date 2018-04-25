@@ -1,0 +1,21 @@
+{
+  "name": "librarian",
+  "version": "0.0.11",
+  "description": "For quickly setting up IPFS redundancy servers for serving your data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://dee19d8a80cf22b751ed413b0c3bc68399a92885.xyz/alchmy/librarian.git"
+  },
+  "keywords": [],
+  "author": "Raymond Smith <raymond@lucentmonkey.com> (alchmy.github.io)",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "chalk": "^2.4.0",
+    "go-ipfs-dep": "^0.4.14",
+    "ipfsd-ctl": "^0.32.1"
+  }
+}
