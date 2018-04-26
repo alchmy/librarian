@@ -2,9 +2,11 @@
 
 sudo apt-get update -y
 
-architecture=$(dpkg --print-architecture )
-if [ "${architecture}" == "i386" ]; then
-    architecture=386
+architecture=$( uname -m )
+if [ "${architecture}" == "i686" ]; then
+    architecture="386"
+elif [ "${architecture}" == "x86_64" ]; then
+    architecture="amd64"
 fi
 
 pkg_arch="linux-${architecture}"
@@ -26,7 +28,7 @@ cd ..
 
 ipfs init
 
-sed "s|<user-name>|$USER|"
+sed "s|<user-name>|$USER|" ./ipfs.service > /lib/systemd/system/ipfs.service
 sudo cp `dirname $0`/ipfs.service /lib/systemd/system/ipfs.service
 #ipfs config Addresses.API /ip4/0.0.0.0/tcp/5002
 #ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]'

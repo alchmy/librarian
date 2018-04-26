@@ -1,6 +1,6 @@
 {
   "name": "@alchmy/librarian",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "For quickly setting up IPFS redundancy servers for serving your data",
   "main": "index.js",
   "scripts": {
